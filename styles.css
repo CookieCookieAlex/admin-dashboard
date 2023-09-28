@@ -1,63 +1,266 @@
-.layout{
+body {
+  margin: 0;
+  padding: 0;
+}
+.layout {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0px 0px;
+  height: 100vh;
+}
+.top-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "search search search profile profile"
+    "greating greating greating media media"
+    "greating greating greating media media";
+  grid-area: 1 / 2 / 2 / 6;
+  background-color: rgb(214, 214, 214);
+  padding: 5px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  width: auto;
+  grid-template-areas: "submit searchtxt";
+  grid-area: search;
+}
+
+.button {
+  grid-area: submit;
+  justify-self: end;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 40px;
+}
+
+.button {
+  background-color: rgba(128, 128, 128, 0);
+  border-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+.searchtxt {
+  grid-area: searchtxt;
+  width: 700px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.searchtxt {
+  background-color: rgba(54, 54, 54, 0.432);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+::placeholder {
+  color: black;
+}
+input:focus {
+  outline: none;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "notikfication avatar name";
+  grid-area: profile;
+}
+
+.name {
+  justify-self: start;
+  align-items: center;
+  padding-left: 10px;
+}
+.avatar {
+  grid-area: avatar;
+  justify-self: end;
+  align-self: center;
+}
+
+#avatar1 {
+  border-radius: 75%;
+}
+
+.notification {
+  grid-area: notikfication;
+  justify-self: end;
+  align-self: center;
+  padding-left: 50px;
+  cursor: pointer;
+}
+
+.greating {
+  display: grid; 
+  grid-template-columns: 0.5fr 1.5fr;  
+  grid-template-areas: 
+    "avatar name";  
+  grid-area: greating;  
+}
+
+.avatar1 {
+  justify-self: start;
+  align-self: center;
+  grid-area: avatar;
+}
+
+.greater {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr; 
+    grid-template-areas: 
+    "greater"
+    "name"; 
+  grid-area: name; 
+}
+
+
+.name3 {
+  grid-area: name;
+  justify-self: center;
+  align-self: start;
+}
+
+.media {
+  grid-area: media;
+}
+
+.side-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 2fr 1.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "logo logo logo"
+    "menu menu menu"
+    "oder oder oder";
+  grid-area: 1 / 1 / 7 / 2;
+  background-color: darkblue;
+}
+.logo {
+  grid-area: logo;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  align-self: center;
+}
+
+.menu {
+  grid-area: menu;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr); 
+  grid-template-areas: 
+    "list"
+    "list"
+    "list"
+    "list"
+    "list"
+    "list"
+  ;
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  gap: 5px;
+  
+  }
+  
+  .menulist {
+    grid-area: list ;
+    display: grid;
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+}
+
+.menulist li {
+  list-style: none;
+  align-self: center;
 
 }
-.child{
 
+.oder {
+  grid-area: oder;  
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "list2"
+    "list2"
+    "list2";
+  cursor: pointer;
+  height: auto;
+  width: auto;
 }
-.topbar{
 
+.orderli {
+  grid-area: list2;
+  display: grid;
+  padding: 0;
+  margin: 0;
+  justify-self: center;
 }
-.minibar1{
 
+.orderli li {
+  list-style: none;
+  align-self: center;
 }
-.search{
 
+.main {
+  grid-area: 2 / 2 / 7 / 6;
 }
-.notification{
-
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "item item2"
+    "item3 item-4"
+    "itme-5 idem-6";
+  grid-area: 2 / 2 / 7 / 5;
+  background-color: darkred;
 }
-.profile{
-
+.item {
+  grid-area: item;
 }
-.minibar2{
-
+.item2 {
+  grid-area: item2;
 }
-.greating{
-
+.item3 {
+  grid-area: item3;
 }
-.media_box{
-
+.item-4 {
+  grid-area: item-4;
 }
-.sidebar{
-
+.itme-5 {
+  grid-area: itme-5;
 }
-.bar{
-
+.idem-6 {
+  grid-area: idem-6;
 }
-.logo{
-
+.right {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "announcment"
+    "trending";
+  grid-area: 2 / 5 / 7 / 6;
+  background-color: purple;
 }
-.home-bar{
-
+.announcment {
+  grid-area: announcment;
 }
-.oder{
-
-}
-.projects{
-
-}
-.left{
-
-}
-.l-child{
-
-}
-.right{
-
-}
-.announcement{
-
-}
-.trending{
-
+.trending {
+  grid-area: trending;
 }
