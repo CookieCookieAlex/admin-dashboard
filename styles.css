@@ -2,6 +2,15 @@ body {
   margin: 0;
   padding: 0;
 }
+
+p {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
 .layout {
   display: grid;
   grid-auto-columns: 1fr;
@@ -82,13 +91,17 @@ input:focus {
   align-items: center;
   padding-left: 10px;
 }
+#profilename {
+  justify-self: start;
+  align-self: center;
+}
 .avatar {
   grid-area: avatar;
   justify-self: end;
   align-self: center;
 }
 
-#avatar1 {
+.avatar1 {
   border-radius: 75%;
 }
 
@@ -108,10 +121,11 @@ input:focus {
   grid-area: greating;  
 }
 
-.avatar1 {
-  justify-self: start;
+.avatar2 {
+  justify-self: end;
   align-self: center;
   grid-area: avatar;
+  margin-right: 10px;
 }
 
 .greater {
@@ -122,17 +136,34 @@ input:focus {
     "greater"
     "name"; 
   grid-area: name; 
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
+#hi {
+  margin-bottom: 0;
+  align-self: end;
+  justify-self: start;
+}
 
-.name3 {
-  grid-area: name;
-  justify-self: center;
+#greatname {
+  margin-top: 0;
   align-self: start;
+  justify-self: start;
 }
 
 .media {
   grid-area: media;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mediabut {
+  width: 80px;
+  height: 30px;
+  justify-self: center;
+  align-self: center;
+
 }
 
 .side-bar {
@@ -214,23 +245,30 @@ input:focus {
   align-self: center;
 }
 
-.main {
-  grid-area: 2 / 2 / 7 / 6;
-}
+
 .project {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 0.3fr 1fr 1fr 1fr; 
+  grid-template-areas: 
+    "caption caption"
     "item item2"
-    "item3 item-4"
-    "itme-5 idem-6";
-  grid-area: 2 / 2 / 7 / 5;
+    "item3 item4"
+    "itme5 item6"; 
+  grid-area: 2 / 2 / 7 / 5; 
   background-color: darkred;
+}
+#txtcaption {
+  margin: 10px 0 10px 10px;
+  justify-self: end;
+  justify-content: start;
+}
+.caption {
+  grid-area: caption;
 }
 .item {
   grid-area: item;
+  background-color: orange;
 }
 .item2 {
   grid-area: item2;
@@ -239,13 +277,13 @@ input:focus {
   grid-area: item3;
 }
 .item-4 {
-  grid-area: item-4;
+  grid-area: item4;
 }
 .itme-5 {
-  grid-area: itme-5;
+  grid-area: itme5;
 }
 .idem-6 {
-  grid-area: idem-6;
+  grid-area: idem6;
 }
 .right {
   display: grid;
