@@ -5,18 +5,20 @@ body {
 
 p {
   margin: 0;
+  margin-left: 20px;
 }
 
 h2 {
   margin: 0;
 }
 
+h3 {
+  margin-left: 20px;
+}
 .layout {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   height: 100vh;
 }
@@ -29,7 +31,7 @@ h2 {
     "greating greating greating media media"
     "greating greating greating media media";
   grid-area: 1 / 2 / 2 / 6;
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(241, 241, 241);
   padding: 5px;
 }
 
@@ -56,6 +58,7 @@ h2 {
   background-color: rgba(128, 128, 128, 0);
   border-color: rgba(255, 255, 255, 0);
   cursor: pointer;
+  
 }
 
 .searchtxt {
@@ -80,7 +83,7 @@ input:focus {
 
 .profile {
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr 1fr;
+  grid-template-columns: 1fr 0.3fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "notikfication avatar name";
   grid-area: profile;
@@ -119,6 +122,8 @@ input:focus {
   grid-template-areas: 
     "avatar name";  
   grid-area: greating;  
+  justify-self: start;
+  margin-left: 10px;
 }
 
 .avatar2 {
@@ -156,36 +161,52 @@ input:focus {
   grid-area: media;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 140px;
+  margin-right: 140px;
 }
 
 .mediabut {
   width: 80px;
-  height: 30px;
+  height: 50px;
   justify-self: center;
   align-self: center;
-
+  border-radius: 75px;
+  background-color: rgb(202, 84, 218);
+  border-color: rgba(0, 0, 255, 0);
+  cursor: pointer;
 }
 
 .side-bar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 1.5fr;
+  grid-template-rows: 0.3fr 0.8fr 1.3fr;
   gap: 0px 0px;
   grid-template-areas:
     "logo logo logo"
     "menu menu menu"
     "oder oder oder";
   grid-area: 1 / 1 / 7 / 2;
-  background-color: darkblue;
+  background-color: rgb(167, 0, 201);
 }
+
 .logo {
   grid-area: logo;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-self: start;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.logoimg {
   justify-self: center;
   align-self: center;
 }
 
+.dashtxt {
+  justify-self: center;
+  align-self: center;
+}
 .menu {
   grid-area: menu;
   display: grid;
@@ -199,10 +220,10 @@ input:focus {
     "list"
   ;
   cursor: pointer;
-  height: auto;
-  width: auto;
   gap: 5px;
-  
+  margin-left: 50px;
+  margin-bottom: 30px;
+
   }
   
   .menulist {
@@ -210,11 +231,11 @@ input:focus {
     display: grid;
     padding: 0;
     margin: 0;
-    justify-self: center;
 }
 
 .menulist li {
   list-style: none;
+  justify-self: start;
   align-self: center;
 
 }
@@ -222,14 +243,14 @@ input:focus {
 .oder {
   grid-area: oder;  
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr 2fr;
   grid-template-areas:
     "list2"
     "list2"
     "list2";
   cursor: pointer;
-  height: auto;
-  width: auto;
+  gap: 5px;
+margin-left: 50px;
 }
 
 .orderli {
@@ -237,11 +258,11 @@ input:focus {
   display: grid;
   padding: 0;
   margin: 0;
-  justify-self: center;
 }
 
-.orderli li {
+.orderli li {  
   list-style: none;
+  justify-self: start;
   align-self: center;
 }
 
@@ -256,7 +277,7 @@ input:focus {
     "item3 item4"
     "item5 item6"; 
   grid-area: 2 / 2 / 7 / 5; 
-  background-color: darkred;
+  background-color: rgb(219, 206, 221);
   padding: 5px;
 }
 
@@ -267,7 +288,7 @@ input:focus {
 }
 #txtcaption {
   margin: 10px;
-  padding-left: 30px;
+  padding-left: 70px;
   justify-self: center;
 
 }
@@ -278,18 +299,21 @@ input:focus {
   grid-area: item;
   margin-left: 20px;
 }
-.item {
-
+.itemadd {
   background-color: gray;
   justify-self: center;
   align-self: center;
   width: 500px;
   height: 200px;
+  border-radius: 12px;
+  text-align: left;
 }
+
 .item2 {
   grid-area: item2;
   margin-right: 20px;
   margin-left: 0;
+  border: 1px;
 }
 .item3 {
   grid-area: item3;
@@ -312,15 +336,14 @@ input:focus {
 .right {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr 1fr;
+  grid-template-rows: 0.4fr 1fr 0.4fr 1fr;
   grid-template-areas:
     "caption1"
     "announcment"
     "caption2"
     "trending";
   grid-area: 2 / 5 / 7 / 6;
-  background-color: purple;
-}
+  background-color: rgb(219, 206, 221);}
 .caption3 {
   grid-area: caption1;
 }
@@ -332,6 +355,7 @@ input:focus {
   background-color: blue;
   justify-self: center;
   align-self: center;
+  border-radius: 12px;
 }
 
 .caption4 {
@@ -346,12 +370,13 @@ input:focus {
   justify-self: center;
   align-self: center;
   margin-bottom: 20px;
+  border-radius: 12px;
 }
 
 .txtcaption1 {
   padding-left: 10px;
   margin-left: 20px;
-  padding-left: 10px;
+  padding-left: 50px;
   justify-self: center;
 
 }
