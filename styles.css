@@ -251,54 +251,107 @@ input:focus {
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: 0.3fr 1fr 1fr 1fr; 
   grid-template-areas: 
-    "caption caption"
+    "caption1 caption2"
     "item item2"
     "item3 item4"
-    "itme5 item6"; 
+    "item5 item6"; 
   grid-area: 2 / 2 / 7 / 5; 
   background-color: darkred;
+  padding: 5px;
+}
+
+.caption1 {
+  grid-area: caption1;
+  justify-self: start;
+  align-self: center;
 }
 #txtcaption {
-  margin: 10px 0 10px 10px;
-  justify-self: end;
-  justify-content: start;
+  margin: 10px;
+  padding-left: 30px;
+  justify-self: center;
+
 }
-.caption {
-  grid-area: caption;
+.caption2 {
+  grid-area: caption2;
 }
 .item {
   grid-area: item;
-  background-color: orange;
+  margin-left: 20px;
+}
+.item {
+
+  background-color: gray;
+  justify-self: center;
+  align-self: center;
+  width: 500px;
+  height: 200px;
 }
 .item2 {
   grid-area: item2;
+  margin-right: 20px;
+  margin-left: 0;
 }
 .item3 {
   grid-area: item3;
+  margin-left: 20px;
 }
-.item-4 {
+.item4 {
   grid-area: item4;
+  margin-right: 20px;
+  margin-left: 0;
 }
-.itme-5 {
-  grid-area: itme5;
+.item5 {
+  grid-area: item5;
+  margin-left: 20px;
 }
-.idem-6 {
-  grid-area: idem6;
+.item6 {
+  grid-area: item6;
+  margin-right: 20px;
+  margin-left: 0;
 }
 .right {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
+  grid-template-rows: 0.5fr 1fr 0.5fr 1fr;
   grid-template-areas:
+    "caption1"
     "announcment"
+    "caption2"
     "trending";
   grid-area: 2 / 5 / 7 / 6;
   background-color: purple;
 }
+.caption3 {
+  grid-area: caption1;
+}
+
 .announcment {
   grid-area: announcment;
+  height: 300px;
+  width: 300px;
+  background-color: blue;
+  justify-self: center;
+  align-self: center;
 }
+
+.caption4 {
+  grid-area: caption2;
+}
+
 .trending {
   grid-area: trending;
+  height: 300px;
+  width: 300px;
+  background-color: blue;
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.txtcaption1 {
+  padding-left: 10px;
+  margin-left: 20px;
+  padding-left: 10px;
+  justify-self: center;
+
 }
